@@ -137,7 +137,8 @@ function App() {
         <button type='submit' className="submit-btn" onClick={submitTaskHandler}>Create Task</button>
       </main>
 
-      
+        {/* Display TaskList Component only when we have tasks submitted */}
+      {data.length > 0 && <TaskList data={data} />}
     </div>
   );
 }
