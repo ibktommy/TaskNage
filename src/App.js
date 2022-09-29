@@ -3,11 +3,11 @@ import React from 'react'
 function App() {
 
   return (
-    <>
-      <h2>TaskNaage- Your Personal TaskList Web App</h2>
+    <div className='container'>
+      <h2>TASKNAGE <br /> Your Personal TaskList Web App</h2>
 
       <main>
-        <h4>Create New Task</h4>
+        <h4>Create new task</h4>
 
         <div className="input-text">
           <input type="text" placeholder='Task Name' />
@@ -27,7 +27,7 @@ function App() {
           <h5>
             Priority
           </h5>
-          <div className="prority-list">
+          <div className="priority-list">
             <button>Low</button>
             <button>Medium</button>
             <button>High</button>
@@ -35,12 +35,17 @@ function App() {
         </div>
 
         <div className="category">
-          <button>Low</button>
-          <button>Family</button>
-          <button>School</button>
+          <h5>
+            Category
+          </h5>
+          <div className="category-list">
+            <button>Work</button>
+            <button>Family</button>
+            <button>School</button>
+          </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }
 
