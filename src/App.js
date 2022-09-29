@@ -13,8 +13,8 @@ function App() {
 
   // UseEffect Hook That Runs Event After Mounting Component
   useEffect(() => {
-    let pBtn = document.querySelectorAll('.priority-list button')
-    let cBtn = document.querySelectorAll('.category-list button')
+    let pBtn = document.querySelectorAll('.priority-buttons')
+    let cBtn = document.querySelectorAll('.category-buttons')
 
     const handleBtnClick = (e) => {
       e.target.classList.add('pressed')
@@ -74,7 +74,7 @@ function App() {
         priority,
         category,
       }
-      setData([newTaskDetails])
+      setData([...data, newTaskDetails])
     }
 
     setName("")
@@ -84,13 +84,13 @@ function App() {
     setPriority("")
     setCategory("")
 
-    let pBtn = document.querySelectorAll('.priority-list button')
+    let pBtn = document.querySelectorAll('.priority-buttons')
     pBtn.forEach((btn) => {
       btn.classList.remove('pressed')
       btn.disabled = false
     })
 
-    let cBtn = document.querySelectorAll('.category-list button')
+    let cBtn = document.querySelectorAll('.category-buttons')
     cBtn.forEach((btn) => {
       btn.classList.remove('pressed')
       btn.disabled = false
@@ -149,9 +149,9 @@ function App() {
             Priority
           </h5>
           <div className="priority-list">
-            <button>Low</button>
-            <button>Medium</button>
-            <button>High</button>
+            <button className='priority-buttons'>Low</button>
+            <button className='priority-buttons'>Medium</button>
+            <button className='priority-buttons'>High</button>
           </div>
         </div>
 
@@ -160,9 +160,9 @@ function App() {
             Category
           </h5>
           <div className="category-list">
-            <button>Work</button>
-            <button>Family</button>
-            <button>School</button>
+            <button className='category-buttons'>Work</button>
+            <button className='category-buttons'>Family</button>
+            <button className='category-buttons'>School</button>
           </div>
         </div>
 
