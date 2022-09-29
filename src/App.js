@@ -71,6 +71,21 @@ function App() {
         <p className="date">
           Today, {currentDate}
         </p>
+
+        <div className="tasklist-item">
+          <p className="category">work</p>
+
+          <div className="others">
+            <p className="priority">High</p>
+            <div className="task">
+              <input type="checkbox" name="check" id="check" />
+              <span>Build a Task App</span>
+            </div>
+            <p className="time">
+              10:00PM
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
