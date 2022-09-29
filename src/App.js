@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect,  useState } from 'react'
 import TaskList from './TaskList';
 
 function App() {
@@ -10,6 +10,47 @@ function App() {
   const [priority, setPriority] = useState("")
   const [category, setCategory] = useState("")
   const [data, setData] = useState([])
+
+  // UseEffect Hook That Runs Event After Mounting Component
+  useEffect(() => {
+    let pBtn = document.querySelectorAll('.priority-list button')
+    let cBtn = document.querySelectorAll('.category-list button')
+
+    const handleBtnClick = (e) => {
+      e.target.classList.add('pressed')
+
+      if (e.target.parentElement.classList.contains('priority-list')) {
+        setPriority(e.target.textContent)
+      } else if (e.target.parentElement.classList.contains('category-list')) {
+        setCategory(e.target.textContent)
+      }
+
+      let siblings = Array.from(e.target.parentElement.children, ((child) => {
+        return child
+      }))
+      siblings.filter((n) => {
+        if (!n.classList.contains('pressed')) {
+          return n.disabled = true
+        }
+        return n
+      })
+    }
+
+    pBtn.forEach((btn) => {
+      btn.addEventListener('click', handleBtnClick)
+    })
+    cBtn.forEach((btn) => {
+      btn.addEventListener('click', handleBtnClick)
+    })
+    return () => {
+      pBtn.forEach((btn) => {
+        btn.removeEventListener('click', handleBtnClick)
+      })
+      cBtn.forEach((btn) => {
+        btn.removeEventListener('click', handleBtnClick)
+      })
+    }
+  }, [])
 
   return (
     <div className='container'>
