@@ -2,6 +2,18 @@ import React from 'react'
 
 function App() {
 
+  const date = new Date();
+
+  let monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+  let day = date.getDate()
+  let month = monthName[date.getMonth()].slice(0, 3)
+  let year = date.getFullYear()
+
+  let currentDate = `${day} ${month}, ${year}.`
+
+  console.log(currentDate)
+
   return (
     <div className='container'>
       <h2>
@@ -48,6 +60,18 @@ function App() {
           </div>
         </div>
       </main>
+
+      <div className="tasklist">
+        <h3 className="name">
+          Hello Best!
+        </h3>
+        <p className="para">
+          Let's be productive today
+        </p>
+        <p className="date">
+          Today, {currentDate}
+        </p>
+      </div>
     </div>
   );
 }
