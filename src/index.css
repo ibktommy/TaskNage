@@ -141,8 +141,12 @@ input::placeholder {
   font-weight: 500;
 }
 
-.tasklist-item {
+.tasklist-item:first-of-type {
   margin-top: 2rem;
+}
+
+.tasklist-item {
+  margin-top: 3rem;
   border: .1rem solid #cecece;
   border-radius: 1rem;
   padding: .5rem;
