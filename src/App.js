@@ -1,4 +1,4 @@
-import React, { useEffect,  useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TaskList from './TaskList';
 
 function App() {
@@ -54,16 +54,28 @@ function App() {
 
   // Submit Button Funtion Handler
   const submitTaskHandler = () => {
-    const newTaskDetails = {
-      name,
-      description,
-      date,
-      time,
-      priority,
-      category,
-    }
+    if (
+      name === "" ||
+      description === "" ||
+      date === "" ||
+      time === "" ||
+      priority === "" ||
+      category === ""
+    ) {
+      alert("PLEASE SELECT ALL OPTIONS AND FILL IN ALL INPUTS!")
+      return
+    } else {
 
-    setData(newTaskDetails)
+      const newTaskDetails = {
+        name,
+        description,
+        date,
+        time,
+        priority,
+        category,
+      }
+      setData([newTaskDetails])
+    }
   }
 
   return (
@@ -137,7 +149,7 @@ function App() {
         <button type='submit' className="submit-btn" onClick={submitTaskHandler}>Create Task</button>
       </main>
 
-        {/* Display TaskList Component only when we have tasks submitted */}
+      {/* Display TaskList Component only when we have tasks submitted */}
       {data.length > 0 && <TaskList data={data} />}
     </div>
   );

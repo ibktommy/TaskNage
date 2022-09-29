@@ -3,7 +3,7 @@ import TaskItem from './components/TaskItem';
 import UserName from './components/UserName';
 import currentDate from './utils/Date';
 
-const TaskList = ({ data }) => {
+const TaskList = () => {
 
   return (
     <div className="tasklist">
