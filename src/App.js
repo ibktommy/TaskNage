@@ -48,9 +48,11 @@ function App() {
             <button>School</button>
           </div>
         </div>
+
+        <button type='submit' className="submit-btn">Create Task</button>
       </main>
 
-      <TaskList />
+      {/* <TaskList /> */}
     </div>
   );
 }
