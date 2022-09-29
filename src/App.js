@@ -52,6 +52,20 @@ function App() {
     }
   }, [])
 
+  // Submit Button Funtion Handler
+  const submitTaskHandler = () => {
+    const newTaskDetails = {
+      name,
+      description,
+      date,
+      time,
+      priority,
+      category,
+    }
+
+    setData(newTaskDetails)
+  }
+
   return (
     <div className='container'>
       <h2>
@@ -120,7 +134,7 @@ function App() {
           </div>
         </div>
 
-        <button type='submit' className="submit-btn">Create Task</button>
+        <button type='submit' className="submit-btn" onClick={submitTaskHandler}>Create Task</button>
       </main>
 
       
