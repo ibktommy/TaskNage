@@ -4,7 +4,10 @@ function App() {
 
   return (
     <div className='container'>
-      <h2>TASKNAGE <br /> Your Personal TaskList Web App</h2>
+      <h2>
+        <span>Tasknage</span>
+        <span>Your Personal Tasklist Web App</span>
+      </h2>
 
       <main>
         <h4>Create new task</h4>
