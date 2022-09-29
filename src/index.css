@@ -124,6 +124,22 @@ input::placeholder {
   overflow-x: hidden;
 }
 
+.tasklist::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.tasklist::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.tasklist::-webkit-scrollbar-thumb {
+  background: purple;
+}
+
+.tasklist::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .tasklist .name {
   text-align: center;
   font-size: 2rem;
