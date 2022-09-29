@@ -98,6 +98,10 @@ input::placeholder {
   cursor: pointer;
 }
 
+.pressed {
+  opacity: .2;
+}
+
 .category button {
   border: none;
 }
