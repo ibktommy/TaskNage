@@ -113,3 +113,97 @@ input::placeholder {
   background: pink;
   color: purple;
 }
+
+/* TASKLIST */
+.tasklist {
+  margin-top: 5rem;
+  height: 50vh;
+  box-shadow: rgba(0,0,0,0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 1rem 3rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tasklist .name {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.tasklist .para {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tasklist .date {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.tasklist-item {
+  margin-top: 2rem;
+  border: .1rem solid #cecece;
+  border-radius: 1rem;
+  padding: .5rem;
+  position: relative;
+  box-shadow: rgba(67, 71, 85, .27) 0px 0px .25em, rgba(90, 125, 188, 0.05) 0px .25em 1em;
+}
+
+.tasklist-item .category {
+  position: absolute;
+  top: -10%;
+  left: -3%;
+  background: green;
+  padding: .1rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.tasklist-item .others {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasklist-item .others .priority {
+  align-self: flex-end;
+  background: red;
+  padding: .1rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tasklist-item .others .task {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.tasklist-item .others .task .icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.tasklist-item .others .task p {
+  max-width: 100%;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: .1rem;
+}
+
+.tasklist-item .others .time {
+  align-self: flex-end;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+

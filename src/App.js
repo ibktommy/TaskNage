@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdRadioButtonUnchecked } from 'react-icons/md'
 
 function App() {
 
@@ -78,11 +79,11 @@ function App() {
           <div className="others">
             <p className="priority">High</p>
             <div className="task">
-              <input type="checkbox" name="check" id="check" />
-              <span>Build a Task App</span>
+              <MdRadioButtonUnchecked className='icon' />
+              <p>Build a Task</p>
             </div>
             <p className="time">
-              10:00PM
+              10:00PM.
             </p>
           </div>
         </div>
