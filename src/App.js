@@ -76,6 +76,26 @@ function App() {
       }
       setData([newTaskDetails])
     }
+
+    setName("")
+    setDescription("")
+    setDate("")
+    setTime("")
+    setPriority("")
+    setCategory("")
+
+    let pBtn = document.querySelectorAll('.priority-list button')
+    pBtn.forEach((btn) => {
+      btn.classList.remove('pressed')
+      btn.disabled = false
+    })
+
+    let cBtn = document.querySelectorAll('.category-list button')
+    cBtn.forEach((btn) => {
+      btn.classList.remove('pressed')
+      btn.disabled = false
+    })
+
   }
 
   return (
