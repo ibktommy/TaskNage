@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 const Inputs = ({ onGetTaskData }) => {
   // Inputs States
   const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
   const [priority, setPriority] = useState("")
@@ -54,7 +53,6 @@ const Inputs = ({ onGetTaskData }) => {
   const submitTaskHandler = () => {
     if (
       name === "" ||
-      description === "" ||
       date === "" ||
       time === "" ||
       priority === "" ||
@@ -66,7 +64,6 @@ const Inputs = ({ onGetTaskData }) => {
 
       const newTaskDetails = {
         name,
-        description,
         date,
         time,
         priority,
@@ -78,7 +75,7 @@ const Inputs = ({ onGetTaskData }) => {
     }
 
     setName("")
-    setDescription("")
+    // setDescription("")
     setDate("")
     setTime("")
     setPriority("")
@@ -106,17 +103,9 @@ const Inputs = ({ onGetTaskData }) => {
       <div className="input-text">
         <input
           type="text"
-          placeholder='Task Name'
+          placeholder='Enter Task Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="input-text">
-        <input
-          type="text"
-          placeholder='Task Description'
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
 

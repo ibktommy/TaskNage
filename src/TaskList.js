@@ -7,7 +7,7 @@ const TaskList = ({ data }) => {
 
   return (
     <div className="tasklist">
-      <UserName />
+      <UserName data={data} />
       <p className="para">
         Let's be productive today
       </p>
