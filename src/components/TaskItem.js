@@ -6,10 +6,10 @@ import { formatTime } from '../utils/Time'
 
 const TaskItem = ({ name, date, time, priority, category }) => {
   // Check State
-  const [check, setChecked] = useState(false)
+  const [checked, setChecked] = useState(false)
 
   const iconCheckHandler = (e) => {
-    setChecked(!check)
+    setChecked(!checked)
   }
 
   return (
@@ -20,9 +20,9 @@ const TaskItem = ({ name, date, time, priority, category }) => {
         <p className={styleButton(priority)}>{priority}</p>
         <div className="task">
           <div className="icon" onClick={iconCheckHandler}>
-            {check ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
+            {checked ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
           </div>
-          <p className={check ? 'line' : null}>{name}</p>
+          <p className={checked ? 'line' : null}>{name}</p>
         </div>
         <div className="period">
           <p className="date">{date}</p>
