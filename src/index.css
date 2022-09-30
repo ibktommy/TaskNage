@@ -281,6 +281,14 @@ input::placeholder {
   letter-spacing: .1rem;
 }
 
+/* Dynamic Class */
+.tasklist-item .others .task p.line {
+  text-decoration: line-through;
+  opacity: .5;
+  user-select: none;
+}
+/* End of Dynamic Class */
+
 .tasklist-item .others .period {
   margin-top: 1rem;
   display: flex;
