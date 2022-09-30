@@ -207,6 +207,19 @@ input::placeholder {
   font-weight: bold;
 }
 
+.tasklist-item .category.work {
+  color: #000;
+  background: lightgreen;
+}
+.tasklist-item .category.family {
+  color: blueviolet;
+  background: lightgray;
+}
+.tasklist-item .category.school {
+  color: purple;
+  background: pink;
+}
+
 .tasklist-item .others {
   display: flex;
   flex-direction: column;

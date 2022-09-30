@@ -1,12 +1,13 @@
 import React from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
+import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
 const TaskItem = ({ name, date, time, priority, category }) => {
   return (
     <div className="tasklist-item">
-      <p className="category">{category}</p>
+      <p className={styleButton(category)}>{category}</p>
 
       <div className="others">
         <p className="priority">{priority}</p>
@@ -26,5 +27,3 @@ const TaskItem = ({ name, date, time, priority, category }) => {
 }
 
 export default TaskItem
-
-// const  = data

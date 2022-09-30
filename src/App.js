@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Inputs from './components/Inputs';
 import TaskList from './TaskList';
 
@@ -18,7 +18,7 @@ function App() {
         <span>Tasknage</span>
         <span>Your Personal Tasklist Web App</span>
       </h2>
-      
+
       <Inputs onGetTaskData={getTaskData} />
 
       {/* Display TaskList Component only when we have tasks submitted */}
