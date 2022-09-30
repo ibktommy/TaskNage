@@ -3,7 +3,7 @@ import TaskItem from './components/TaskItem';
 import UserName from './components/UserName';
 import currentDate from './utils/Date';
 
-const TaskList = () => {
+const TaskList = ({ data }) => {
 
   return (
     <div className="tasklist">
@@ -14,6 +14,12 @@ const TaskList = () => {
       <p className="date">
         Today, {currentDate}
       </p>
+
+      {data.map((dataItem, index) => {
+        return (
+          <TaskItem key={dataItem.index} {...dataItem} />
+        )
+      })}
     </div>
   )
 }
