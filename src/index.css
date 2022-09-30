@@ -246,9 +246,15 @@ input::placeholder {
   letter-spacing: .1rem;
 }
 
-.tasklist-item .others .time {
-  align-self: flex-end;
-  font-size: 1.5rem;
+.tasklist-item .others .period {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasklist-item .others .period .date,
+.tasklist-item .others .period .time {
+  font-size: 1.3rem;
   font-weight: bold;
 }
 

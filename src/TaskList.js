@@ -17,7 +17,7 @@ const TaskList = ({ data }) => {
 
       {data.map((dataItem, index) => {
         return (
-          <TaskItem key={dataItem.index} {...dataItem} />
+          <TaskItem key={index} {...dataItem} />
         )
       })}
     </div>
