@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
-import { getTime } from '../utils/Time'
+import { formatTime } from '../utils/Time'
 
 const TaskItem = ({ name, date, time, priority, category }) => {
   return (
@@ -18,7 +18,7 @@ const TaskItem = ({ name, date, time, priority, category }) => {
         </div>
         <div className="period">
           <p className="date">{date}</p>
-          <p className="time">{getTime(time)}</p>
+          <p className="time">{formatTime(time)}</p>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-export function getTime(time) {
+export function formatTime(time) {
   const [hours, minutes] = time.split(':')
 
   let getHours = parseInt(hours)
