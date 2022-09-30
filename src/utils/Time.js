@@ -4,9 +4,10 @@ export function formatTime(time) {
   let getHours = parseInt(hours)
 
   if (getHours >= 12) {
-    return `${getHours}:${minutes} PM`
+    let newHour = parseInt(getHours - 12)
+    return `0${newHour}:${minutes} PM`
 
   } else {
-    return `${getHours}:${minutes} AM`
+    return `0${getHours}:${minutes} AM`
   }
 }
