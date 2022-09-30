@@ -9,7 +9,9 @@ const TaskItem = ({ description, date, time, priority, category }) => {
       <div className="others">
         <p className="priority">{priority}</p>
         <div className="task">
-          <MdRadioButtonUnchecked className='icon' />
+          <div className="icon">
+            <MdRadioButtonUnchecked/>
+          </div>
           <p>{description}</p>
         </div>
         <div className="period">
