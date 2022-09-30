@@ -10,7 +10,7 @@ const TaskItem = ({ name, date, time, priority, category }) => {
       <p className={styleButton(category)}>{category}</p>
 
       <div className="others">
-        <p className="priority">{priority}</p>
+        <p className={styleButton(priority)}>{priority}</p>
         <div className="task">
           <div className="icon">
             <MdRadioButtonUnchecked />

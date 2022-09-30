@@ -98,9 +98,11 @@ input::placeholder {
   cursor: pointer;
 }
 
+/* Dynamic Class */
 .pressed {
   opacity: .2;
 }
+/* End of Dynamic Class */
 
 .category button {
   border: none;
@@ -207,6 +209,8 @@ input::placeholder {
   font-weight: bold;
 }
 
+
+/* Dynamic Class */
 .tasklist-item .category.work {
   color: #000;
   background: lightgreen;
@@ -219,6 +223,7 @@ input::placeholder {
   color: purple;
   background: pink;
 }
+/* End of Dynamic Class */
 
 .tasklist-item .others {
   display: flex;
@@ -235,6 +240,18 @@ input::placeholder {
   font-weight: bold;
   color: #fff;
 }
+
+/* Dynamic Class */
+.tasklist-item .priority.low {
+  background: rgb(255, 137, 192);
+}
+.tasklist-item .priority.medium {
+  background: rgb(0, 170, 0);
+}
+.tasklist-item .priority.high {
+  background: red;
+}
+/* End of Dynamic Class */
 
 .tasklist-item .others .task {
   width: 100%;
