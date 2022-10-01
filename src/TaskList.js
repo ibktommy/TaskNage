@@ -3,7 +3,7 @@ import TaskItem from './components/TaskItem';
 import UserName from './components/UserName';
 import currentDate from './utils/Date';
 
-const TaskList = ({ data }) => {
+const TaskList = ({ data, passDelete }) => {
 
   return (
     <div className="tasklist">
@@ -17,7 +17,7 @@ const TaskList = ({ data }) => {
 
       {data.map((dataItem, index) => {
         return (
-          <TaskItem key={index} {...dataItem} />
+          <TaskItem key={index} {...dataItem} onDeleteTask={passDelete}/>
         )
       })}
     </div>

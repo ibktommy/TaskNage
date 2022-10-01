@@ -12,6 +12,12 @@ function App() {
     setData([...data, newTaskData])
   }
 
+  // Function To Delete an Item from the Data-Array
+  const deleteTaskItem = (id) => {
+    const filteredTasks = data.filter((task) => task.id !== id)
+    setData(filteredTasks)
+  }
+
   return (
     <div className='container'>
       <h2>
@@ -22,7 +28,7 @@ function App() {
       <Inputs onGetTaskData={getTaskData} />
 
       {/* Display TaskList Component only when we have tasks submitted */}
-      {data.length > 0 && <TaskList data={data} />}
+      {data.length > 0 && <TaskList data={data} passDelete={deleteTaskItem}/>}
     </div>
   );
 }

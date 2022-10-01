@@ -4,7 +4,7 @@ import { MdRadioButtonUnchecked } from 'react-icons/md'
 import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
-const TaskItem = ({ name, date, time, priority, category }) => {
+const TaskItem = ({ name, date, time, priority, category, onDeleteTask, index }) => {
   // Check State
   const [checked, setChecked] = useState(false)
 
