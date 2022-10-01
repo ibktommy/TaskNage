@@ -77,9 +77,6 @@ const Inputs = ({ onGetTaskData }) => {
 
       // Function-Prop that Passes the newTaskDetails Up To The App-Component
       setData([...data, newTaskDetails])
-
-      // Saving Data-Array to the localStorage
-      localStorage.setItem('tasks', JSON.stringify([...data, newTaskDetails]))
     }
 
     setName("")
@@ -100,8 +97,12 @@ const Inputs = ({ onGetTaskData }) => {
       btn.classList.remove('pressed')
       btn.disabled = false
     })
-
   }
+
+  // Saving Data-Array to the localStorage
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify([...data]))
+  }, [data])
   
   return (
     <main>

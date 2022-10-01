@@ -16,19 +16,10 @@ const AppProvider = ({ children }) => {
   // Setting Data-App-State
   const [data, setData] = useState(getDataInLocalStorage())
 
-
-  // Function To Delete an Item from the Data-Array
-  const deleteTaskItem = (id) => {
-    // const filteredTasks = data.filter((task) => task.id !== id)
-    // setData(filteredTasks)
-    console.log(id)
-  }
-
   return (
     <AppContext.Provider value={{
       data,
       setData,
-      deleteTaskItem,
     }}>
       {children}
     </AppContext.Provider>

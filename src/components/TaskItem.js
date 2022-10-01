@@ -5,11 +5,11 @@ import { useGlobalAppContext } from '../context/context'
 import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
-const TaskItem = ({ name, date, time, priority, category }) => {
+const TaskItem = ({ name, date, time, priority, category, id }) => {
   const [checked, setChecked] = useState(false)
 
-  const iconCheckHandler = () => {
-    setChecked(!checked)
+  const iconCheckHandler = (id) => {
+    setChecked(true)
   }
 
   return (
@@ -19,7 +19,7 @@ const TaskItem = ({ name, date, time, priority, category }) => {
       <div className="others">
         <p className={styleButton(priority)}>{priority}</p>
         <div className="task">
-          <div className="icon" onClick={iconCheckHandler}> 
+          <div className="icon" onClick={() => iconCheckHandler(id)}> 
             {checked ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
           </div>
           <p className={checked ? 'line' : null}>{name}</p>
