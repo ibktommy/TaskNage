@@ -5,12 +5,8 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   // Setting Data-App-State
   const [data, setData] = useState([])
+  const [checked, setChecked] = useState(false)
 
-
-  // Function To Get Data Prop From Input-Child-Component
-  // const getTaskData = (newTaskData) => {
-  //   setData([...data, newTaskData])
-  // }
 
   // Function To Delete an Item from the Data-Array
   const deleteTaskItem = (id) => {
@@ -18,12 +14,20 @@ const AppProvider = ({ children }) => {
     setData(filteredTasks)
   }
 
+  // Function to Handle Checked-State
+  const iconCheckHandler = (e) => {
+    setChecked(!checked)
+  }
+
 
   return (
     <AppContext.Provider value={{
       data,
+      checked,
       setData,
+      setChecked,
       deleteTaskItem,
+      iconCheckHandler,
     }}>
       {children}
     </AppContext.Provider>
