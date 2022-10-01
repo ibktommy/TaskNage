@@ -15,9 +15,9 @@ const TaskList = ({ data }) => {
         Today, {currentDate}
       </p>
 
-      {data.map((dataItem, index) => {
+      {data.map((dataItem, id) => {
         return (
-          <TaskItem key={index} {...dataItem} />
+          <TaskItem key={id} {...dataItem} />
         )
       })}
     </div>

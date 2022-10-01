@@ -67,6 +67,7 @@ const Inputs = ({ onGetTaskData }) => {
     } else {
 
       const newTaskDetails = {
+        id: new Date().getTime().toString(),
         name,
         date,
         time,
@@ -75,7 +76,6 @@ const Inputs = ({ onGetTaskData }) => {
       }
 
       // Function-Prop that Passes the newTaskDetails Up To The App-Component
-      // onGetTaskData(newTaskDetails)
       setData([...data, newTaskDetails])
 
       // Saving Data-Array to the localStorage
@@ -83,7 +83,6 @@ const Inputs = ({ onGetTaskData }) => {
     }
 
     setName("")
-    // setDescription("")
     setDate("")
     setTime("")
     setPriority("")

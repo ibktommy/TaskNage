@@ -19,22 +19,16 @@ const AppProvider = ({ children }) => {
 
   // Function To Delete an Item from the Data-Array
   const deleteTaskItem = (id) => {
-    const filteredTasks = data.filter((task) => task.id !== id)
-    setData(filteredTasks)
+    // const filteredTasks = data.filter((task) => task.id !== id)
+    // setData(filteredTasks)
+    console.log(id)
   }
-
-  // Function to Handle Checked-State
-  // const iconCheckHandler = () => {
-  //   setChecked(!checked)
-  // }
-
 
   return (
     <AppContext.Provider value={{
       data,
       setData,
       deleteTaskItem,
-      // iconCheckHandler,
     }}>
       {children}
     </AppContext.Provider>

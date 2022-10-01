@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
 import { useGlobalAppContext } from '../context/context'
@@ -19,7 +19,7 @@ const TaskItem = ({ name, date, time, priority, category }) => {
       <div className="others">
         <p className={styleButton(priority)}>{priority}</p>
         <div className="task">
-          <div className="icon" onClick={iconCheckHandler}>
+          <div className="icon" onClick={iconCheckHandler}> 
             {checked ? <MdRadioButtonChecked /> : <MdRadioButtonUnchecked />}
           </div>
           <p className={checked ? 'line' : null}>{name}</p>
