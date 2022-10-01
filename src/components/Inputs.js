@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useGlobalAppContext } from '../context/context'
 
 const Inputs = ({ onGetTaskData }) => {
   // Inputs States
@@ -7,6 +8,9 @@ const Inputs = ({ onGetTaskData }) => {
   const [time, setTime] = useState("")
   const [priority, setPriority] = useState("")
   const [category, setCategory] = useState("")
+
+  // Getting the Data-State from the App Context
+  const { data, setData } = useGlobalAppContext()
 
   // UseEffect Hook That Runs Event After Mounting Component
   useEffect(() => {
@@ -71,7 +75,8 @@ const Inputs = ({ onGetTaskData }) => {
       }
 
       // Function-Prop that Passes the newTaskDetails Up To The App-Component
-      onGetTaskData(newTaskDetails)
+      // onGetTaskData(newTaskDetails)
+      setData([...data, newTaskDetails])
     }
 
     setName("")

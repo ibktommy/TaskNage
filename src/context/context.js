@@ -8,9 +8,9 @@ const AppProvider = ({ children }) => {
 
 
   // Function To Get Data Prop From Input-Child-Component
-  const getTaskData = (newTaskData) => {
-    setData([...data, newTaskData])
-  }
+  // const getTaskData = (newTaskData) => {
+  //   setData([...data, newTaskData])
+  // }
 
   // Function To Delete an Item from the Data-Array
   const deleteTaskItem = (id) => {
@@ -23,7 +23,6 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider value={{
       data,
       setData,
-      getTaskData,
       deleteTaskItem,
     }}>
       {children}

@@ -17,7 +17,7 @@ function App() {
       <Inputs />
 
       {/* Display TaskList Component only when we have tasks submitted */}
-      {data.length > 0 && <TaskList />}
+      {data.length > 0 && <TaskList data={data} />}
     </div>
   );
 }
