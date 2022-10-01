@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Inputs from './components/Inputs';
 import { useGlobalAppContext } from './context/context';
 import TaskList from './TaskList';

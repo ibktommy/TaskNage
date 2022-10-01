@@ -15,9 +15,11 @@ const AppProvider = ({ children }) => {
   }
 
   // Function to Handle Checked-State
-  const iconCheckHandler = (e) => {
+  const iconCheckHandler = () => {
     setChecked(!checked)
   }
+
+  // Function to Get Data from localStorage
 
 
   return (

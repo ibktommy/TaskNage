@@ -77,6 +77,9 @@ const Inputs = ({ onGetTaskData }) => {
       // Function-Prop that Passes the newTaskDetails Up To The App-Component
       // onGetTaskData(newTaskDetails)
       setData([...data, newTaskDetails])
+
+      // Saving Data-Array to the localStorage
+      localStorage.setItem('tasks', JSON.stringify([...data, newTaskDetails]))
     }
 
     setName("")
