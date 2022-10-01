@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 const AppContext = React.createContext()
 
@@ -15,7 +15,6 @@ const AppProvider = ({ children }) => {
   }
   // Setting Data-App-State
   const [data, setData] = useState(getDataInLocalStorage())
-  const [checked, setChecked] = useState(false)
 
 
   // Function To Delete an Item from the Data-Array
@@ -25,19 +24,17 @@ const AppProvider = ({ children }) => {
   }
 
   // Function to Handle Checked-State
-  const iconCheckHandler = () => {
-    setChecked(!checked)
-  }
+  // const iconCheckHandler = () => {
+  //   setChecked(!checked)
+  // }
 
 
   return (
     <AppContext.Provider value={{
       data,
-      checked,
       setData,
-      setChecked,
       deleteTaskItem,
-      iconCheckHandler,
+      // iconCheckHandler,
     }}>
       {children}
     </AppContext.Provider>

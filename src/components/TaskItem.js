@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
 import { useGlobalAppContext } from '../context/context'
@@ -6,9 +6,11 @@ import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
 const TaskItem = ({ name, date, time, priority, category }) => {
-  // Getting checked-state from the App Context
-  const { checked, iconCheckHandler } = useGlobalAppContext()
+  const [checked, setChecked] = useState(false)
 
+  const iconCheckHandler = () => {
+    setChecked(!checked)
+  }
 
   return (
     <div className="tasklist-item">
