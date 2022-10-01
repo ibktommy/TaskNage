@@ -1,22 +1,11 @@
 import React, { useState } from 'react'
 import Inputs from './components/Inputs';
+import { useGlobalAppContext } from './context/context';
 import TaskList from './TaskList';
 
 function App() {
-  // APP STATE
-  const [data, setData] = useState([])
-
-
-  // Function To Get Data Prop From Input-Child-Component
-  const getTaskData = (newTaskData) => {
-    setData([...data, newTaskData])
-  }
-
-  // Function To Delete an Item from the Data-Array
-  const deleteTaskItem = (id) => {
-    const filteredTasks = data.filter((task) => task.id !== id)
-    setData(filteredTasks)
-  }
+  // Get Data-State from the App Context
+  const { data } = useGlobalAppContext()
 
   return (
     <div className='container'>
@@ -25,10 +14,10 @@ function App() {
         <span>Your Personal Tasklist Web App</span>
       </h2>
 
-      <Inputs onGetTaskData={getTaskData} />
+      <Inputs />
 
       {/* Display TaskList Component only when we have tasks submitted */}
-      {data.length > 0 && <TaskList data={data} passDelete={deleteTaskItem}/>}
+      {data.length > 0 && <TaskList />}
     </div>
   );
 }
