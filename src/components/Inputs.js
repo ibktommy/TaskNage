@@ -139,7 +139,7 @@ const Inputs = () => {
 
       <div className="priority">
         <h5>
-          Priority
+          Select Task Priority
         </h5>
         <div className="priority-list">
           <button className='priority-buttons'>Low</button>
@@ -150,11 +150,11 @@ const Inputs = () => {
 
       <div className="category">
         <h5>
-          Category
+          Select Task Category
         </h5>
         <div className="category-list">
           <button className='category-buttons'>Work</button>
-          <button className='category-buttons'>Family</button>
+          <button className='category-buttons'>Personal</button>
           <button className='category-buttons'>School</button>
         </div>
       </div>

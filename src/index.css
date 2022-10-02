@@ -38,7 +38,7 @@ body {
 
 .overlay .modal {
   width: 70vw;
-  height: 15rem;
+  min-height: 15rem;
   background: #fff;
   text-align: center;
   padding: 2rem 0;
@@ -186,7 +186,7 @@ input::placeholder {
 
 /* TASKLIST */
 .tasklist {
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 5rem;
   height: 50vh;
   box-shadow: rgba(0,0,0,0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -266,7 +266,7 @@ input::placeholder {
   color: #000;
   background: lightgreen;
 }
-.tasklist-item .category.family {
+.tasklist-item .category.personal {
   color: blueviolet;
   background: lightgray;
 }

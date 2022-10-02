@@ -2,7 +2,7 @@ export function styleButton(value) {
   let valueText = value.toLowerCase()
 
   if (valueText === 'work') return 'category work'
-  if (valueText === 'family') return 'category family'
+  if (valueText === 'personal') return 'category personal'
   if (valueText === 'school') return 'category school'
 
   if (valueText === 'low') return 'priority low'

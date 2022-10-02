@@ -13,7 +13,7 @@ function App() {
       {!error && <ErrorModal />}
       <h2>
         <span>Tasknage</span>
-        <span>Your Personal Tasklist Web App</span>
+        <span>Your Personal Task-Manager Web App</span>
       </h2>
 
       <Inputs />
