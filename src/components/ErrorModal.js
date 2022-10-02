@@ -1,6 +1,8 @@
 import React from 'react'
+import { useGlobalAppContext } from '../context/context'
 
 const ErrorModal = () => {
+  const { setError } = useGlobalAppContext()
 
   return (
     <div className="overlay">
@@ -8,7 +10,7 @@ const ErrorModal = () => {
         <p className="text">
           Please fill in all input fields and select options!
         </p>
-        <button>okay</button>
+        <button onClick={() => setError(true)}>okay</button>
       </div>
     </div>
   )
