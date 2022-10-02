@@ -11,6 +11,27 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgba(0,0,0,.8);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay .modal {
+  width: 20rem;
+  height: 20rem;
+  background: #ccc;
+  text-align: center;
 }
 
 .container {

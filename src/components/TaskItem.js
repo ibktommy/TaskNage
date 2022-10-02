@@ -14,6 +14,7 @@ const TaskItem = ({ name, date, time, priority, category, id }) => {
     setChecked(true)
   }, [setChecked])
 
+  // Deleting a TaskItem when the item has been checked
   useEffect(() => {
     if (checked) {
       let filteredTasks = data.filter((item) => item.id !== id)

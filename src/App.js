@@ -1,4 +1,5 @@
 import React from 'react'
+import ErrorModal from './components/ErrorModal';
 import Inputs from './components/Inputs';
 import { useGlobalAppContext } from './context/context';
 import TaskList from './TaskList';
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <div className='container'>
+      <ErrorModal />
       <h2>
         <span>Tasknage</span>
         <span>Your Personal Tasklist Web App</span>
