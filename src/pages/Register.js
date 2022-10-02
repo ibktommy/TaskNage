@@ -29,7 +29,7 @@ const Register = () => {
 
         <p>
           Already have an Account?
-          <span>REGISTER</span>
+          <span>LOGIN</span>
         </p>
       </form>
     </main>
