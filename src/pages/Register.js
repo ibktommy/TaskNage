@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const Register = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
 
   const formSubmitHandler = (e) => {
     e.preventDefault()
@@ -17,6 +18,9 @@ const Register = () => {
         </div>
         <div className="password">
           <input type="text" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <div className="password">
+          <input type="text" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         </div>
 
         <button className="submit-form">
