@@ -197,10 +197,12 @@ input::placeholder {
   box-shadow: rgba(67, 71, 85, .27) 0px 0px .25em, rgba(90, 125, 188, 0.05) 0px .25em 1em;
 }
 
+/* Dynamic Class */
 .tasklist-item.slide {
   transform: translateX(110%);
-  transition: transform 1s ease-out;
+  transition: transform .5s ease-out;
 }
+/* End Dynamic Class */
 
 .tasklist-item .category {
   position: absolute;
