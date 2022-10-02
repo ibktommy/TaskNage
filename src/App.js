@@ -6,10 +6,11 @@ import TaskList from './TaskList';
 
 function App() {
   // Get Data-State from the App Context
-  const { data } = useGlobalAppContext()
+  const { data, error } = useGlobalAppContext()
 
   return (
     <div className='container'>
+      {!error && <ErrorModal />}
       <h2>
         <span>Tasknage</span>
         <span>Your Personal Tasklist Web App</span>

@@ -16,10 +16,15 @@ const AppProvider = ({ children }) => {
   // Setting Data-App-State
   const [data, setData] = useState(getDataInLocalStorage())
 
+  // Error State
+  const [error, setError] = useState(true)
+
   return (
     <AppContext.Provider value={{
       data,
       setData,
+      error,
+      setError,
     }}>
       {children}
     </AppContext.Provider>

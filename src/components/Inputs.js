@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useGlobalAppContext } from '../context/context'
+import ErrorModal from './ErrorModal'
 
 const Inputs = () => {
   // Inputs States
@@ -10,7 +11,7 @@ const Inputs = () => {
   const [category, setCategory] = useState("")
 
   // Getting the Data-State from the App Context
-  const { data, setData } = useGlobalAppContext()
+  const { data, setData, setError } = useGlobalAppContext()
 
   // UseEffect Hook That Runs Event After Mounting Component
   useEffect(() => {
@@ -62,7 +63,7 @@ const Inputs = () => {
       priority === "" ||
       category === ""
     ) {
-      alert("PLEASE SELECT ALL OPTIONS AND FILL IN ALL INPUTS!")
+      setError(false)
       return
     } else {
 
