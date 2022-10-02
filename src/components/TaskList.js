@@ -1,7 +1,7 @@
 import React from 'react'
-import TaskItem from './components/TaskItem';
-import UserName from './components/UserName';
-import currentDate from './utils/Date';
+import TaskItem from './TaskItem';
+import UserName from './UserName';
+import currentDate from '../utils/Date';
 
 const TaskList = ({ data }) => {
 
