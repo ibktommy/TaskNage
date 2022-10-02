@@ -22,7 +22,7 @@ const TaskItem = ({ name, date, time, priority, category, id }) => {
       setTimeout(() => {
         setChecked(false)
         setData(filteredTasks)
-      }, 1300);
+      }, 800);
       clearTimeout()
     }
   }, [id, data, setData, checked])
