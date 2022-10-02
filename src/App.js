@@ -10,7 +10,6 @@ function App() {
 
   return (
     <div className='container'>
-      <ErrorModal />
       <h2>
         <span>Tasknage</span>
         <span>Your Personal Tasklist Web App</span>

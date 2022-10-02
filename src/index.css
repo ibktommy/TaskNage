@@ -14,6 +14,15 @@ body {
   position: relative;
 }
 
+.container {
+  width: 35rem;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  margin:  0 auto;
+}
+
+/* OVERLAY */
 .overlay {
   position: absolute;
   top: 0;
@@ -28,19 +37,33 @@ body {
 }
 
 .overlay .modal {
-  width: 20rem;
-  height: 20rem;
-  background: #ccc;
+  width: 50vw;
+  height: 15rem;
+  background: #fff;
   text-align: center;
+  padding: 2rem 0;
+  border-radius: .5rem;
 }
 
-.container {
-  width: 35rem;
-  max-width: 100vw;
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  margin:  0 auto;
+.overlay .modal p {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
 }
+
+.overlay .modal button {
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  background: blueviolet;
+  border: 0;
+  color: #fff;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+
+/* END OF OVERLAY */
 
 h2 {
   display: flex;
