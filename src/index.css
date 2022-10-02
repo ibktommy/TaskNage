@@ -152,6 +152,20 @@ input::placeholder {
   border: none;
 }
 
+.priority button {
+  color: #fff;
+}
+
+.priority button:nth-child(1) {
+  background: rgb(255, 137, 192);
+}
+.priority button:nth-child(2) {
+  background: rgb(0, 170, 0);
+}
+.priority button:nth-child(3) {
+  background: red;
+}
+
 .category button:nth-child(1) {
   background: lightgreen;
 }
