@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useGlobalAppContext } from '../context/context'
 
-const Inputs = ({ onGetTaskData }) => {
+const Inputs = () => {
   // Inputs States
   const [name, setName] = useState("")
   const [date, setDate] = useState("")
