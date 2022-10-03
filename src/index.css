@@ -445,6 +445,7 @@ form p .link {
   margin-left: 1rem;
   color: green;
   font-weight: bold;
+  text-transform: capitalize;
   text-decoration: underline;
   font-size: 1.45rem;
   cursor: pointer;

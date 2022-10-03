@@ -8,7 +8,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
 
   // From FirebaseContext
-  const { register, firebaseError, setFirebaseError, authErrorHandler } = useFirebaseContext()
+  const { register, firebaseError, setFirebaseError } = useFirebaseContext()
 
   // Navigate
   const navigate = useNavigate()
@@ -19,23 +19,31 @@ const Register = () => {
     try {
       if (email === "" || password === "" || confirmPassword === "") {
         setFirebaseError('Please fill in the form details appropriately!')
+        setTimeout(() => {
+          setFirebaseError('')
+        }, 2000);
       } else if (password !== confirmPassword) {
         setFirebaseError('Your Password Do not Match!')
+        setTimeout(() => {
+          setFirebaseError('')
+        }, 2000);
         setPassword('')
         setConfirmPassword('')
       } else {
         setFirebaseError('Connecting...')
+        setTimeout(() => {
+          setFirebaseError('')
+        }, 2000);
         await register(email, password, confirmPassword)
         navigate('/')
       }
     } catch (error) {
       setFirebaseError(error.message)
+      setTimeout(() => {
+        setFirebaseError('')
+      }, 2000);
     }
   }
-
-  useEffect(() => {
-    authErrorHandler(firebaseError)
-  }, [firebaseError, authErrorHandler])
 
   return (
     <main className='form-main'>
@@ -60,7 +68,7 @@ const Register = () => {
 
         <p>
           Already have an Account?
-          <Link to='/login' className='link'>LOGIN</Link>
+          <Link to='/login' className='link'>login</Link>
         </p>
       </form>
     </main>

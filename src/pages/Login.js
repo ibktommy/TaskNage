@@ -7,7 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
 
   // From AppContext
-  const { firebaseError, setFirebaseError, authErrorHandler, login } = useFirebaseContext()
+  const { firebaseError, setFirebaseError, login } = useFirebaseContext()
 
   // Navigate
   const navigate = useNavigate()
@@ -18,19 +18,24 @@ const Login = () => {
     try {
       if (email === "" || password === "") {
         setFirebaseError('Please fill in the form details appropriately!')
+        setTimeout(() => {
+          setFirebaseError('')
+        }, 2000);
       } else {
         setFirebaseError('Connecting...')
+        setTimeout(() => {
+          setFirebaseError('')
+        }, 2000);
         await login(email, password)
         navigate('/')
       }
     } catch (error) {
       setFirebaseError(error.message)
+      setTimeout(() => {
+        setFirebaseError('')
+      }, 2000);
     }
   }
-
-  useEffect(() => {
-    authErrorHandler(firebaseError)
-  }, [firebaseError, authErrorHandler])
 
   return (
     <main className='form-main'>
@@ -52,7 +57,7 @@ const Login = () => {
 
         <p>
           Don't have an Account?
-          <Link to='/register' className='link'>Register</Link>
+          <Link to='/register' className='link'>register</Link>
         </p>
       </form>
     </main>
