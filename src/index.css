@@ -74,7 +74,7 @@ h2 {
 h2 span:nth-child(1) {
   font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: 1rem;
+  letter-spacing: .6rem;
 }
 
 h2 span:nth-child(2) {
@@ -390,10 +390,14 @@ input::placeholder {
   margin-top: 30%;
 }
 
+.form-main input {
+  border: .1rem solid #a77979;
+}
+
 .form-title {
   text-align: center;
-  font-size: 2rem;
-  color: #252525;
+  font-size: 1.6rem;
+  color: #3b3b3b;
 }
 
 .form-error {

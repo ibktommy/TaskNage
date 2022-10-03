@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useFirebaseContext } from '../context/firebaseContext'
+import Header from '../components/Header'
 
 const Register = () => {
   const [email, setEmail] = useState('')
@@ -47,13 +48,14 @@ const Register = () => {
 
   return (
     <main className='form-main'>
+      <Header />
       <h3 className='form-title'>Register Your Account</h3>
 
       {firebaseError && <p className='form-error'>{firebaseError}</p>}
 
       <form onSubmit={formSubmitHandler}>
         <div className="username">
-          <input type="text" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="password">
           <input type="password" placeholder='Password (at least 6 characters)' value={password} onChange={(e) => setPassword(e.target.value)} />

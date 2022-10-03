@@ -3,6 +3,7 @@ import { useGlobalAppContext } from '../context/context'
 import ErrorModal from '../components/ErrorModal'
 import Inputs from '../components/Inputs'
 import TaskList from '../components/TaskList'
+import Header from '../components/Header'
 
 
 const Home = () => {
@@ -12,10 +13,8 @@ const Home = () => {
     <>
       {!error && <ErrorModal />
       }
-      <h2>
-        <span>Tasknage</span>
-        <span>Your Personal Task-Manager Web App</span>
-      </h2>
+
+      <Header />
 
       <Inputs />
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Header from '../components/Header'
 import { useFirebaseContext } from '../context/firebaseContext'
 
 const Login = () => {
@@ -39,13 +40,14 @@ const Login = () => {
 
   return (
     <main className='form-main'>
+      <Header />
       <h3 className='form-title'>Login Your Account</h3>
 
       {firebaseError && <p className='form-error'>{firebaseError}</p>}
 
       <form onSubmit={formSubmitHandler}>
         <div className="username">
-          <input type="text" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="login" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="password">
           <input type="password" placeholder='Password (at least 6 characters)' value={password} onChange={(e) => setPassword(e.target.value)} />
