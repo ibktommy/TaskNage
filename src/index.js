@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { AppProvider } from './context/context';
+import { FirebaseContextProvider } from './context/firebaseContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
+    <FirebaseContextProvider>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </FirebaseContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

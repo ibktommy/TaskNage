@@ -5,22 +5,23 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = async (e) => {
     e.preventDefault()
   }
+
   return (
     <main className='form-main'>
       <h3 className='form-title'>Register Your Account</h3>
 
       <form onSubmit={formSubmitHandler}>
         <div className="username">
-          <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" placeholder='Enter Your Email' value={username} onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div className="password">
-          <input type="text" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div className="password">
-          <input type="text" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+          <input type="password" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         </div>
 
         <button className="submit-form">

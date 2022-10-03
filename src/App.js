@@ -8,8 +8,8 @@ function App() {
   return (
     <div className='container'>
       {/* <Home /> */}
-      {/* <Register /> */}
-      <Login />
+      <Register />
+      {/* <Login /> */}
     </div>
   );
 }
