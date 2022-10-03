@@ -41,6 +41,11 @@ const FirebaseContextProvider = ({ children }) => {
     await signInWithEmailAndPassword(auth, email, password)
   }
 
+  // Function To Logout User
+  const logout = () => {
+    return signOut(auth)
+  }
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser)
@@ -53,11 +58,13 @@ const FirebaseContextProvider = ({ children }) => {
 
   return (
     <FirebaseContext.Provider value={{
+      user,
       firebaseError,
       setFirebaseError,
       authErrorHandler,
       register,
       login,
+      logout,
     }}>
       {children}
     </FirebaseContext.Provider>

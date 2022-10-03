@@ -2,8 +2,22 @@ import React from 'react'
 import TaskItem from './TaskItem';
 import UserName from './UserName';
 import currentDate from '../utils/Date';
+import { useFirebaseContext } from '../context/firebaseContext';
+import { useNavigate } from 'react-router-dom';
 
 const TaskList = ({ data }) => {
+  const { logout } = useFirebaseContext()
+  const navigate = useNavigate()
+
+  // Logout User Handler
+  const handleLogout = async () => {
+    try {
+      await logout()
+      navigate('/login')
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 
   return (
     <div className="tasklist">
@@ -21,7 +35,7 @@ const TaskList = ({ data }) => {
         )
       })}
 
-      <button className='logout-btn'>
+      <button className='logout-btn' onClick={handleLogout}>
         Log Out
       </button>
     </div>
