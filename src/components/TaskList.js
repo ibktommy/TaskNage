@@ -13,7 +13,7 @@ const TaskList = ({ data }) => {
   const handleLogout = async () => {
     try {
       await logout()
-      navigate('/login')
+      navigate('/')
     } catch (error) {
       console.log(error.message)
     }
