@@ -18,9 +18,10 @@ const Register = () => {
 
     try {
       if (email === "" || password === "" || confirmPassword === "") {
-        alert('PLEASE FILL IN THE FORM DETAILS APPROPRIATELY!')
+        // alert('PLEASE FILL IN THE FORM DETAILS APPROPRIATELY!')
+        setFirebaseError('Please fill in the form Details APPROPRIATELY!')
       } else if (password !== confirmPassword) {
-        alert('YOUR PASSWORDS DO NOT MATCH!')
+        setFirebaseError('Your Password Do not Match!')
         setPassword('')
         setConfirmPassword('')
       } else {
@@ -28,7 +29,6 @@ const Register = () => {
         console.log('User Registered Successfully!')
       }
     } catch (error) {
-      console.log(error.message)
       setFirebaseError(error.message)
     }
   }
@@ -37,7 +37,7 @@ const Register = () => {
     <main className='form-main'>
       <h3 className='form-title'>Register Your Account</h3>
 
-      <p>{firebaseError}</p>
+      {firebaseError && <p className='form-error'>{firebaseError}</p>}
 
       <form onSubmit={formSubmitHandler}>
         <div className="username">

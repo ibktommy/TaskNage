@@ -365,7 +365,7 @@ input::placeholder {
   font-weight: bold;
 }
 
-/* REGISTER PAGE */
+/* REGISTER/LOGIN PAGE */
 .form-main {
   margin-top: 30%;
 }
@@ -374,6 +374,17 @@ input::placeholder {
   text-align: center;
   font-size: 2rem;
   color: #252525;
+}
+
+.form-error {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: bold;
+  padding: .5rem;
+  background: red;
+  border-radius: 5rem;
+  word-spacing: .2rem;
 }
 
 form {
