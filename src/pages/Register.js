@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { useGlobalAppContext } from '../context/context'
 import { useFirebaseContext } from '../context/firebaseContext'
 
@@ -13,6 +14,9 @@ const Register = () => {
   // From AppContext
   const { firebaseError, setFirebaseError } = useGlobalAppContext()
 
+  // Navigate
+  const navigate = useNavigate()
+
   const formSubmitHandler = async (e) => {
     e.preventDefault()
 
@@ -26,6 +30,7 @@ const Register = () => {
       } else {
         await register(email, password, confirmPassword)
         console.log('User Registered Successfully!')
+        navigate('/')
       }
     } catch (error) {
       setFirebaseError(error.message)
@@ -67,7 +72,9 @@ const Register = () => {
 
         <p>
           Already have an Account?
-          <span>LOGIN</span>
+          <span>
+            <Link to='/login'>LOGIN</Link>
+          </span>
         </p>
       </form>
     </main>

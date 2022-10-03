@@ -411,8 +411,9 @@ form button {
   margin-top: 2rem;
 }
 
-form button:focus {
+form button:hover {
   background: green;
+  transition: .5s ease;
 }
 
 form p {
