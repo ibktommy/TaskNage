@@ -2,7 +2,7 @@ import React from 'react'
 import { useGlobalAppContext } from '../context/context'
 
 const ErrorModal = () => {
-  const { setError } = useGlobalAppContext()
+  const { setError, setErrorMessage } = useGlobalAppContext()
 
   return (
     <div className="overlay">

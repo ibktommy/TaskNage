@@ -18,6 +18,7 @@ const AppProvider = ({ children }) => {
 
   // Error State
   const [error, setError] = useState(true)
+  const [firebaseError, setFirebaseError] = useState('')
 
   return (
     <AppContext.Provider value={{
@@ -25,6 +26,8 @@ const AppProvider = ({ children }) => {
       setData,
       error,
       setError,
+      firebaseError,
+      setFirebaseError,
     }}>
       {children}
     </AppContext.Provider>
