@@ -420,7 +420,7 @@ form p {
   font-size: 1.4rem;
 }
 
-form p span {
+form p .link {
   display: inline-block;
   margin-left: 1rem;
   color: green;
