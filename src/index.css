@@ -78,7 +78,7 @@ h2 span:nth-child(1) {
 }
 
 h2 span:nth-child(2) {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   word-spacing: .2rem;
   letter-spacing: .1rem;
   font-weight: 400;
@@ -206,6 +206,8 @@ input::placeholder {
   padding: 1rem 1.5rem;
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .tasklist::-webkit-scrollbar {
@@ -233,12 +235,12 @@ input::placeholder {
 .tasklist .para {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 2rem;
 }
 
 .tasklist .date {
   font-size: 1.4rem;
   font-weight: 500;
+  margin: .5rem 0 1rem 0;
 }
 
 .tasklist-item:first-of-type {
@@ -363,6 +365,24 @@ input::placeholder {
 .tasklist-item .others .period .time {
   font-size: 1.3rem;
   font-weight: bold;
+}
+
+.tasklist .logout-btn {
+  display: inline-block;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border: 0;
+  background: orangered;
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tasklist .logout-btn:hover {
+  background: red;
+  transition: .4s ease;
 }
 
 /* REGISTER/LOGIN PAGE */

@@ -20,6 +20,10 @@ const TaskList = ({ data }) => {
           <TaskItem key={id} {...dataItem} />
         )
       })}
+
+      <button className='logout-btn'>
+        Log Out
+      </button>
     </div>
   )
 }
