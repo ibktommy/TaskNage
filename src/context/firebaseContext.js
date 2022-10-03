@@ -49,6 +49,7 @@ const FirebaseContextProvider = ({ children }) => {
       user,
       firebaseError,
       setFirebaseError,
+
       register,
       login,
       logout,

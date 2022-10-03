@@ -1,6 +1,8 @@
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useGlobalAppContext } from '../context/context'
-import ErrorModal from './ErrorModal'
+import { useFirebaseContext } from '../context/firebaseContext'
+import { db } from '../firebase'
 
 const Inputs = () => {
   // Inputs States
@@ -9,6 +11,15 @@ const Inputs = () => {
   const [time, setTime] = useState("")
   const [priority, setPriority] = useState("")
   const [category, setCategory] = useState("")
+
+  // From Firebase
+  const { user } = useFirebaseContext()
+
+  // Creating a Task ID reference from our Firestore Database
+  const taskID = doc(db, 'users', `${user?.email}`)
+
+  // Save Task Details to Firebase Firestore
+
 
   // Getting the Data-State from the App Context
   const { data, setData, setError } = useGlobalAppContext()
@@ -55,30 +66,30 @@ const Inputs = () => {
   }, [])
 
   // Submit Button Funtion Handler
-  const submitTaskHandler = () => {
-    if (
-      name === "" ||
-      date === "" ||
-      time === "" ||
-      priority === "" ||
-      category === ""
-    ) {
-      setError(false)
-      return
-    } else {
-
-      const newTaskDetails = {
-        id: new Date().getTime().toString(),
-        name,
-        date,
-        time,
-        priority,
-        category,
+  const submitTaskHandler = async () => {
+    if (user?.email) {
+      if (
+        name === "" ||
+        date === "" ||
+        time === "" ||
+        priority === "" ||
+        category === ""
+      ) {
+        setError(false)
+        return
+      } else {
+          await updateDoc(taskID, {
+            taskList: arrayUnion({
+              id: new Date().getTime().toString(),
+              name,
+              date,
+              time,
+              priority,
+              category,
+            })
+          })
+        }
       }
-
-      // Function-Prop that Passes the newTaskDetails Up To The App-Component
-      setData([...data, newTaskDetails])
-    }
 
     setName("")
     setDate("")
@@ -101,9 +112,9 @@ const Inputs = () => {
   }
 
   // Saving Data-Array to the localStorage
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify([...data]))
-  }, [data])
+  // useEffect(() => {
+  //   localStorage.setItem('tasks', JSON.stringify([...data]))
+  // }, [data])
   
   return (
     <main>
