@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { useGlobalAppContext } from '../context/context'
 import { useFirebaseContext } from '../context/firebaseContext'
 
 const Register = () => {
@@ -9,10 +8,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
 
   // From FirebaseContext
-  const { register } = useFirebaseContext()
-
-  // From AppContext
-  const { firebaseError, setFirebaseError } = useGlobalAppContext()
+  const { register, firebaseError, setFirebaseError, authErrorHandler } = useFirebaseContext()
 
   // Navigate
   const navigate = useNavigate()
@@ -38,16 +34,8 @@ const Register = () => {
   }
 
   useEffect(() => {
-    if (firebaseError) {
-      let errorText = document.querySelector('.form-error')
-      console.log(errorText)
-      setTimeout(() => {
-        errorText.classList.add('hidden')
-      }, 3000);
-      errorText.classList.remove('hidden')
-      clearTimeout()
-    }
-  }, [firebaseError])
+    authErrorHandler(firebaseError)
+  }, [firebaseError, authErrorHandler])
 
   return (
     <main className='form-main'>
@@ -60,10 +48,10 @@ const Register = () => {
           <input type="text" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="password">
-          <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" placeholder='Password (at least 6 characters)' value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div className="password">
-          <input type="password" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+          <input type="password" placeholder='Confirm Password (at least 6 characters)' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
         </div>
 
         <button className="submit-form">

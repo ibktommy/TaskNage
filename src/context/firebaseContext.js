@@ -8,12 +8,23 @@ import {
 } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
 
-
-
 const FirebaseContext = React.createContext()
 
 const FirebaseContextProvider = ({ children }) => {
   const [user, setUser] = useState([])
+  const [firebaseError, setFirebaseError] = useState('')
+
+  // Function To Handle Authentication Error
+  const authErrorHandler = (authError) => {
+    if (authError) {
+      let errorText = document.querySelector('.form-error')
+      setTimeout(() => {
+        errorText.classList.add('hidden')
+      }, 2000);
+      errorText.classList.remove('hidden')
+      clearTimeout()
+    }
+  }
 
   // Function To Register Users
   const register = async (email, password, confirmPassword) => {
@@ -23,6 +34,11 @@ const FirebaseContextProvider = ({ children }) => {
     } catch (error) {
       console.log(error.message)
     }
+  }
+
+  // Function To Login User Details
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password)
   }
 
   useEffect(() => {
@@ -37,7 +53,11 @@ const FirebaseContextProvider = ({ children }) => {
 
   return (
     <FirebaseContext.Provider value={{
+      firebaseError,
+      setFirebaseError,
+      authErrorHandler,
       register,
+      login,
     }}>
       {children}
     </FirebaseContext.Provider>
