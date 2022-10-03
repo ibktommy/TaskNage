@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useGlobalAppContext } from '../context/context'
 import { useFirebaseContext } from '../context/firebaseContext'
 
@@ -18,8 +18,7 @@ const Register = () => {
 
     try {
       if (email === "" || password === "" || confirmPassword === "") {
-        // alert('PLEASE FILL IN THE FORM DETAILS APPROPRIATELY!')
-        setFirebaseError('Please fill in the form Details APPROPRIATELY!')
+        setFirebaseError('Please fill in the form details appropriately!')
       } else if (password !== confirmPassword) {
         setFirebaseError('Your Password Do not Match!')
         setPassword('')
@@ -32,6 +31,18 @@ const Register = () => {
       setFirebaseError(error.message)
     }
   }
+
+  useEffect(() => {
+    if (firebaseError) {
+      let errorText = document.querySelector('.form-error')
+      console.log(errorText)
+      setTimeout(() => {
+        errorText.classList.add('hidden')
+      }, 3000);
+      errorText.classList.remove('hidden')
+      clearTimeout()
+    }
+  }, [firebaseError])
 
   return (
     <main className='form-main'>

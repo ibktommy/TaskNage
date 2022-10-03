@@ -383,8 +383,12 @@ input::placeholder {
   font-weight: bold;
   padding: .5rem;
   background: red;
-  border-radius: 5rem;
   word-spacing: .2rem;
+  text-transform: capitalize;
+}
+
+.form-error.hidden {
+  display: none;
 }
 
 form {
