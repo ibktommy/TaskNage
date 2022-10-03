@@ -28,8 +28,8 @@ const Register = () => {
         setPassword('')
         setConfirmPassword('')
       } else {
+        setFirebaseError('Connecting...')
         await register(email, password, confirmPassword)
-        console.log('User Registered Successfully!')
         navigate('/')
       }
     } catch (error) {

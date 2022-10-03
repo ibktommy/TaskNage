@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { auth, db } from '../firebase'
 import {
   createUserWithEmailAndPassword,
@@ -19,11 +19,20 @@ const FirebaseContextProvider = ({ children }) => {
   const register = async (email, password, confirmPassword) => {
     await createUserWithEmailAndPassword(auth, email, password, confirmPassword)
     try {
-      await setDoc(doc(db, 'users', email), { tasklist: [] })
+      await setDoc(doc(db, 'users', email), { tasklist: [], })
     } catch (error) {
       console.log(error.message)
     }
   }
+
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser)
+    })
+    return () => {
+      unSubscribe()
+    }
+  })
 
 
   return (
