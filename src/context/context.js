@@ -14,15 +14,15 @@ const AppProvider = ({ children }) => {
   //   }
   // }
   // Setting Data-App-State
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
   // Error State
   const [error, setError] = useState(true)
 
   return (
     <AppContext.Provider value={{
-      data,
-      setData,
+      // data,
+      // setData,
       error,
       setError,
     }}>

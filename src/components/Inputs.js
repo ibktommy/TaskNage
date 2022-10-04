@@ -20,7 +20,6 @@ const Inputs = () => {
 
   // Save Task Details to Firebase Firestore
 
-
   // Getting the Data-State from the App Context
   const { data, setData, setError } = useGlobalAppContext()
 

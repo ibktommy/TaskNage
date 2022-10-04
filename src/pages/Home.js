@@ -4,11 +4,16 @@ import ErrorModal from '../components/ErrorModal'
 import Inputs from '../components/Inputs'
 import TaskList from '../components/TaskList'
 import Header from '../components/Header'
+import { useFirebaseContext } from '../context/firebaseContext'
 
 
 const Home = () => {
-  // Get Data-State from the App Context
-  const { data, error } = useGlobalAppContext()
+  // Get Error-State from the App Context
+  const { error } = useGlobalAppContext()
+
+  // Get Data-State from the Firebase Context
+  const { taskData } = useFirebaseContext()
+
   return (
     <>
       {!error && <ErrorModal />
@@ -19,7 +24,7 @@ const Home = () => {
       <Inputs />
 
       {/* Display TaskList Component only when we have tasks submitted */}
-      {data.length > 0 && <TaskList data={data} />}
+      {taskData.length > 0 && <TaskList taskData={taskData} />}
 
     </>
   )
