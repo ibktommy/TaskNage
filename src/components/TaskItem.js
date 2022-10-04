@@ -1,31 +1,30 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
-import { useGlobalAppContext } from '../context/context'
 import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
-const TaskItem = ({ name, date, time, priority, category, id }) => {
+const TaskItem = ({ name, date, time, priority, category, id, onDelete }) => {
   const [checked, setChecked] = useState(false)
-
-  const { data, setData } = useGlobalAppContext()
 
   const iconCheckHandler = useCallback((id) => {
     setChecked(true)
-  }, [setChecked])
+    setTimeout(() => {
+      setChecked(false)
+      onDelete(id)
+    }, 800);
+    clearTimeout()
+  }, [setChecked, onDelete])
 
   // Deleting a TaskItem when the item has been checked
-  useEffect(() => {
-    if (checked) {
-      let filteredTasks = data.filter((item) => item.id !== id)
-
-      setTimeout(() => {
-        setChecked(false)
-        setData(filteredTasks)
-      }, 800);
-      clearTimeout()
-    }
-  }, [id, data, setData, checked])
+  // useEffect(() => {
+  //   if (checked) {
+  //     setTimeout(() => {
+  //       setChecked(false)
+  //     }, 800);
+  //     clearTimeout()
+  //   }
+  // }, [checked])
 
   return (
     <div className={checked ? 'tasklist-item slide' : 'tasklist-item'}>

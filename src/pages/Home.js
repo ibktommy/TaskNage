@@ -5,7 +5,7 @@ import Inputs from '../components/Inputs'
 import TaskList from '../components/TaskList'
 import Header from '../components/Header'
 import { useFirebaseContext } from '../context/firebaseContext'
-import { doc, onSnapshot } from 'firebase/firestore'
+import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 
 const Home = () => {
@@ -23,6 +23,17 @@ const Home = () => {
     }
   }, [user.email])
 
+  // Function To Delete TaskItem from Firebase Firestore
+  let dataRef = doc(db, 'users', `${user.email}`)
+  const deleteItem = async (id) => {
+    try {
+      const newTaskList = data.filter((item) => item.id !== id)
+      await updateDoc(dataRef, { taskList: newTaskList })
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
     <>
       {!error && <ErrorModal />
@@ -33,7 +44,7 @@ const Home = () => {
       <Inputs />
 
       {/* Display TaskList Component only when we have tasks submitted */}
-      {data.length > 0 && <TaskList data={data} />}
+      {data.length > 0 && <TaskList data={data} onDelete={deleteItem}/>}
 
     </>
   )

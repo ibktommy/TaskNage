@@ -6,7 +6,6 @@ import { useFirebaseContext } from './firebaseContext'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  const { user } = useFirebaseContext()
   // Function to Get Data from localStorage
   // const getDataInLocalStorage = () => {
   //   let dataStorage = localStorage.getItem('tasks')
