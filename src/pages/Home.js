@@ -16,14 +16,12 @@ const Home = () => {
 
   // Fetching Data from Firebase Firestore
   useEffect(() => {
-    if (user) {
+    if (user.email) {
       onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
         setData(doc.data().taskList)
       })
-    } else {
-      setData([])
     }
-  }, [user.email, user])
+  }, [user.email])
 
   return (
     <>
