@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
 
   // Condition to check if user has logged in
   if (!user) {
-    return <Navigate to='/login' />
+    return <Navigate to='/register' />
   } else {
     return children
   }

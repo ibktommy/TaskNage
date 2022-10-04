@@ -8,6 +8,10 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --animate-duration: 1s;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;

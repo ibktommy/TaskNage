@@ -47,7 +47,7 @@ const Register = () => {
   }
 
   return (
-    <main className='form-main'>
+    <main className='form-main animate__animated animate__fadeInLeft'>
       <Header />
       <h3 className='form-title'>Register Your Account</h3>
 

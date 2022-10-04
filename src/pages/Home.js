@@ -35,7 +35,7 @@ const Home = () => {
   }
 
   return (
-    <>
+    <div className='animate__animated animate__zoomIn'>
       {!error && <ErrorModal />
       }
 
@@ -46,7 +46,7 @@ const Home = () => {
       {/* Display TaskList Component only when we have tasks submitted */}
       {data.length > 0 && <TaskList data={data} onDelete={deleteItem}/>}
 
-    </>
+    </div>
   )
 }
 

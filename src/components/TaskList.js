@@ -21,7 +21,7 @@ const TaskList = ({ data, onDelete }) => {
   }
 
   return (
-    <div className="tasklist">
+    <div className="tasklist animate__animated animate__fadeInUp">
       <UserName />
       <p className="para">
         Let's be productive today

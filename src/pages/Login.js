@@ -39,7 +39,7 @@ const Login = () => {
   }
 
   return (
-    <main className='form-main'>
+    <main className='form-main animate__animated animate__fadeInLeft'>
       <Header />
       <h3 className='form-title'>Login Your Account</h3>
 
