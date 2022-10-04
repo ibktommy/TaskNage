@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
 import { styleButton } from '../utils/styleButton'
@@ -16,15 +16,6 @@ const TaskItem = ({ name, date, time, priority, category, id, onDelete }) => {
     clearTimeout()
   }, [setChecked, onDelete])
 
-  // Deleting a TaskItem when the item has been checked
-  // useEffect(() => {
-  //   if (checked) {
-  //     setTimeout(() => {
-  //       setChecked(false)
-  //     }, 800);
-  //     clearTimeout()
-  //   }
-  // }, [checked])
 
   return (
     <div className={checked ? 'tasklist-item slide' : 'tasklist-item'}>

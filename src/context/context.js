@@ -1,22 +1,8 @@
-import { doc, getDoc, getDocs, onSnapshot } from 'firebase/firestore'
-import React, { useContext, useEffect, useState } from 'react'
-import { db } from '../firebase'
-import { useFirebaseContext } from './firebaseContext'
+import React, { useContext, useState } from 'react'
 
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  // Function to Get Data from localStorage
-  // const getDataInLocalStorage = () => {
-  //   let dataStorage = localStorage.getItem('tasks')
-
-  //   if (dataStorage) {
-  //     return JSON.parse(localStorage.getItem('tasks'))
-  //   } else {
-  //     return []
-  //   }
-  // }
-
   // Error State
   const [error, setError] = useState(true)
 
