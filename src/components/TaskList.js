@@ -5,7 +5,7 @@ import currentDate from '../utils/Date';
 import { useFirebaseContext } from '../context/firebaseContext';
 import { useNavigate } from 'react-router-dom';
 
-const TaskList = ({ taskData }) => {
+const TaskList = ({ data }) => {
   const { logout } = useFirebaseContext()
   const navigate = useNavigate()
 
@@ -13,7 +13,7 @@ const TaskList = ({ taskData }) => {
   const handleLogout = async () => {
     try {
       await logout()
-      navigate('/')
+      navigate('/login')
     } catch (error) {
       console.log(error.message)
     }
@@ -29,7 +29,7 @@ const TaskList = ({ taskData }) => {
         Today, {currentDate}
       </p>
 
-      {taskData.map((dataItem, id) => {
+      {data.map((dataItem, id) => {
         return (
           <TaskItem key={id} {...dataItem} />
         )

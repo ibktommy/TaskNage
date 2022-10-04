@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { MdRadioButtonChecked } from 'react-icons/md'
 import { MdRadioButtonUnchecked } from 'react-icons/md'
-import { useFirebaseContext } from '../context/firebaseContext'
+import { useGlobalAppContext } from '../context/context'
 import { styleButton } from '../utils/styleButton'
 import { formatTime } from '../utils/Time'
 
 const TaskItem = ({ name, date, time, priority, category, id }) => {
   const [checked, setChecked] = useState(false)
 
-  const { taskData, setTaskData } = useFirebaseContext()
+  const { data, setData } = useGlobalAppContext()
 
   const iconCheckHandler = useCallback((id) => {
     setChecked(true)
@@ -17,15 +17,15 @@ const TaskItem = ({ name, date, time, priority, category, id }) => {
   // Deleting a TaskItem when the item has been checked
   useEffect(() => {
     if (checked) {
-      let filteredTasks = taskData.filter((item) => item.id !== id)
+      let filteredTasks = data.filter((item) => item.id !== id)
 
       setTimeout(() => {
         setChecked(false)
-        setTaskData(filteredTasks)
+        setData(filteredTasks)
       }, 800);
       clearTimeout()
     }
-  }, [id, taskData, setTaskData, checked])
+  }, [id, data, setData, checked])
 
   return (
     <div className={checked ? 'tasklist-item slide' : 'tasklist-item'}>

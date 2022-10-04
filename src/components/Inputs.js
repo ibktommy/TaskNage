@@ -16,12 +16,10 @@ const Inputs = () => {
   const { user } = useFirebaseContext()
 
   // Creating a Task ID reference from our Firestore Database
-  const taskID = doc(db, 'users', `${user?.email}`)
-
-  // Save Task Details to Firebase Firestore
+  const taskRef = doc(db, 'users', `${user?.email}`)
 
   // Getting the Data-State from the App Context
-  const { data, setData, setError } = useGlobalAppContext()
+  const { setError } = useGlobalAppContext()
 
   // UseEffect Hook That Runs Event After Mounting Component
   useEffect(() => {
@@ -77,7 +75,8 @@ const Inputs = () => {
         setError(false)
         return
       } else {
-          await updateDoc(taskID, {
+          // Save Task Details to Firebase Firestore
+          await updateDoc(taskRef, {
             taskList: arrayUnion({
               id: new Date().getTime().toString(),
               name,

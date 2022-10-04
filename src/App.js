@@ -10,13 +10,13 @@ function App() {
   return (
     <div className='container'>
       <Routes>
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/register' element={<Register />} />
         <Route exact path='/' element={
           <PrivateRoute>
             <Home />
           </PrivateRoute>
         } />
-        <Route exact path='/login' element={<Login />} />
-        <Route exact path='/register' element={<Register />} />
       </Routes>
     </div>
   );

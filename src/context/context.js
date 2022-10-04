@@ -1,8 +1,12 @@
-import React, { useContext,  useState } from 'react'
+import { doc, getDoc, getDocs, onSnapshot } from 'firebase/firestore'
+import React, { useContext, useEffect, useState } from 'react'
+import { db } from '../firebase'
+import { useFirebaseContext } from './firebaseContext'
 
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
+  const { user } = useFirebaseContext()
   // Function to Get Data from localStorage
   // const getDataInLocalStorage = () => {
   //   let dataStorage = localStorage.getItem('tasks')
@@ -13,16 +17,12 @@ const AppProvider = ({ children }) => {
   //     return []
   //   }
   // }
-  // Setting Data-App-State
-  // const [data, setData] = useState([])
 
   // Error State
   const [error, setError] = useState(true)
 
   return (
     <AppContext.Provider value={{
-      // data,
-      // setData,
       error,
       setError,
     }}>

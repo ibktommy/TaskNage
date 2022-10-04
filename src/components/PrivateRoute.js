@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   const { user } = useFirebaseContext()
 
   // Condition to check if user has logged in
-  if (!user?.email) {
+  if (!user) {
     return <Navigate to='/login' />
   } else {
     return children
