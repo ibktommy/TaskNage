@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useGlobalAppContext } from '../context/context'
 import Inputs from '../components/Inputs'
 import TaskList from '../components/TaskList'
 import Header from '../components/Header'
