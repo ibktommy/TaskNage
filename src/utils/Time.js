@@ -6,8 +6,19 @@ export function formatTime(time) {
   if (getHours > 12) {
     let newHour = parseInt(getHours - 12)
     return `${newHour}:${minutes} PM`
+  }
 
-  } else {
+  else if (getHours === 12) {
+    let newHour = 12
+    return `${newHour}:${minutes} PM`
+  }
+
+  else if (getHours === 24) {
+    let newHour = 12
+    return `${newHour}:${minutes} AM`
+  }
+
+  else {
     return `${getHours}:${minutes} AM`
   }
 }
