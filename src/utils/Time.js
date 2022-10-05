@@ -3,7 +3,7 @@ export function formatTime(time) {
 
   let getHours = parseInt(hours)
 
-  if (getHours >= 12) {
+  if (getHours > 12) {
     let newHour = parseInt(getHours - 12)
     return `${newHour}:${minutes} PM`
 
