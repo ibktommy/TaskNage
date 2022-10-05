@@ -109,11 +109,6 @@ const Inputs = () => {
     })
   }
 
-  // Saving Data-Array to the localStorage
-  // useEffect(() => {
-  //   localStorage.setItem('tasks', JSON.stringify([...data]))
-  // }, [data])
-  
   return (
     <main>
       <h4>Create new task</h4>
