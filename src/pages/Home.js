@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useGlobalAppContext } from '../context/context'
-import ErrorModal from '../components/ErrorModal'
 import Inputs from '../components/Inputs'
 import TaskList from '../components/TaskList'
 import Header from '../components/Header'
@@ -9,8 +8,6 @@ import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 
 const Home = () => {
-  // Get Error-State from the App Context
-  const { error } = useGlobalAppContext()
   const [data, setData] = useState([])
   const { user } = useFirebaseContext()
 
@@ -36,9 +33,6 @@ const Home = () => {
 
   return (
     <div className='animate__animated animate__zoomIn'>
-      {!error && <ErrorModal />
-      }
-
       <Header />
 
       <Inputs />
